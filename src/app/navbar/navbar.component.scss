@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    margin: 5%;
+    width: 160%;
+    height: 100%;
+    border: 1px solid ghostwhite;
+    border-radius: 10px;
+
+}
+
+.navbar-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 30px;
+    margin: 4%;
+}

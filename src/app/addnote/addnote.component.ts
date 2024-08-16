@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { IMG_ICON, BRUSH_ICON, TICK_ICON } from '../../assets/svg.icons';
+import {
+  IMG_ICON,
+  BRUSH_ICON,
+  TICK_ICON,
+  PIN_ICON,
+  UNDO_ICON,
+  REDO_ICON,
+} from '../../assets/svg.icons';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -21,7 +28,28 @@ export class AddnoteComponent implements OnInit {
       'tick-icon',
       sanitizer.bypassSecurityTrustHtml(TICK_ICON)
     );
+    iconRegistry.addSvgIconLiteral(
+      'pin-icon',
+      sanitizer.bypassSecurityTrustHtml(PIN_ICON)
+    );
+    iconRegistry.addSvgIconLiteral(
+      'undo-icon',
+      sanitizer.bypassSecurityTrustHtml(UNDO_ICON)
+    );
+    iconRegistry.addSvgIconLiteral(
+      'redo-icon',
+      sanitizer.bypassSecurityTrustHtml(REDO_ICON)
+    );
   }
 
   ngOnInit(): void {}
+
+  displayDiv: any = 'true';
+
+  showCard() {
+    this.displayDiv = 'false';
+  }
+  closeCard() {
+    this.displayDiv = 'true';
+  }
 }

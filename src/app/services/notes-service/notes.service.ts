@@ -7,9 +7,9 @@ import { HttpService } from '../http-service/http.service';
 export class NotesService {
   constructor(private httpService: HttpService) {}
   access_token = localStorage.getItem('access_token');
-  getAllNotesApiCall() {
+  getAllNotesApiCall(endpoint: string) {
     return this.httpService.getAPICall(
-      `/notes/getNotesList?access_token=${this.access_token}`
+      `/notes/${endpoint}?access_token=${this.access_token}`
     );
   }
 }

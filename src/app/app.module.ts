@@ -20,6 +20,7 @@ import { TrashContainerComponent } from './trash-container/trash-container.compo
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddnoteComponent } from './addnote/addnote.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddnoteComponent } from './addnote/addnote.component';
     ReactiveFormsModule,
     MatIconModule,
     HttpClientModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
