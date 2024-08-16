@@ -1,12 +1,11 @@
 .navbar {
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
-    margin: 5%;
+    background-color: rgb(255, 255, 255);
     width: 160%;
     height: 100%;
-    border: 1px solid ghostwhite;
-    border-radius: 10px;
+    // border: 1px solid ghostwhite;
+    // border-radius: 10px;
 
 }
 
@@ -15,5 +14,13 @@
     flex-direction: row;
     justify-content: left;
     gap: 30px;
-    margin: 4%;
+    height: 43px;
+    margin-top: 12px;
+    align-items: center;
+    padding-left: 20px;
+}
+.navbar-contents:hover {
+    cursor: pointer;
+    background-color: rgb(215, 194, 131);
+    border-radius: 0px 20px 20px 0px;
 }
