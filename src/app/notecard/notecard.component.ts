@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import {
   REMINDER_ICON,
   COLLABRATOR_ICON,
@@ -9,9 +9,11 @@ import {
   DELETE_FOREVER_ICON,
   RESTORE_ICON,
   UNARCHIVE_ICON,
+  PIN_ICON,
 } from '../../assets/svg.icons';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { EventEmitter } from 'stream';
 @Component({
   selector: 'app-notecard',
   templateUrl: './notecard.component.html',
@@ -19,7 +21,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class NotecardComponent implements OnInit {
   @Input() noteDetails: any;
-
+  //  @Output() sendDataToParent=new EventEmitter();
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral(
       'reminder-icon',
@@ -57,6 +59,14 @@ export class NotecardComponent implements OnInit {
       'unarchive-icon',
       sanitizer.bypassSecurityTrustHtml(UNARCHIVE_ICON)
     );
+    iconRegistry.addSvgIconLiteral(
+      'pin-icon',
+      sanitizer.bypassSecurityTrustHtml(PIN_ICON)
+    );
   }
   ngOnInit(): void {}
+
+  handleDelete() {
+    // this.sendDataToParent.emit("data from child deleted");
+  }
 }

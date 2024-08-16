@@ -9,6 +9,9 @@ import {
   DELETE_FOREVER_ICON,
   RESTORE_ICON,
   UNARCHIVE_ICON,
+  EDIT_ICON,
+  TRASH_ICON,
+  NOTE_ICON,
 } from '../../assets/svg.icons';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -53,8 +56,16 @@ export class NavbarComponent implements OnInit {
       sanitizer.bypassSecurityTrustHtml(RESTORE_ICON)
     );
     iconRegistry.addSvgIconLiteral(
-      'unarchive-icon',
-      sanitizer.bypassSecurityTrustHtml(UNARCHIVE_ICON)
+      'note-icon',
+      sanitizer.bypassSecurityTrustHtml(NOTE_ICON)
+    );
+    iconRegistry.addSvgIconLiteral(
+      'edit-icon',
+      sanitizer.bypassSecurityTrustHtml(EDIT_ICON)
+    );
+    iconRegistry.addSvgIconLiteral(
+      'trash-icon',
+      sanitizer.bypassSecurityTrustHtml(TRASH_ICON)
     );
   }
 
