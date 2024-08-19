@@ -11,6 +11,7 @@ export class HttpService {
   }
 
   getAPICall(endpoint: string) {
+    console.log(this.BASE_URL, endpoint);
     return this.http.get(this.BASE_URL + endpoint);
   }
 }
