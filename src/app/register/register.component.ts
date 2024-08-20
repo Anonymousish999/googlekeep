@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   }
 
   redirectToLogin() {
-    this.route.navigate(['./login']);
+    this.route.navigate(['']);
   }
   get registerControl() {
     return this.registerForm.controls;
