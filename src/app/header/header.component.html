@@ -16,8 +16,9 @@
             <div class="header-search">
                 <mat-icon svgIcon="search-icon" aria-hidden="false" aria-label="search icon"
                     style="width:15px; margin-left:14px; margin-top: 10px; margin-right: 23px; height:0%;padding-top:1%"></mat-icon>
-                <input class="header-search-input" type="text" placeholder="Search"
+                <input class="header-search-input" type="text" placeholder="Search" [(ngModel)] = "searchText" (ngModelChange)="onSearch()"
                     style="border:none; background-color: whitesmoke; width:94%; height: 46px;">
+                    
             </div>
             <div class="header-icons">
                 <mat-icon svgIcon="refresh-icon" aria-hidden="false" aria-label="refresh icon" style="margin-top: 6px;"></mat-icon>

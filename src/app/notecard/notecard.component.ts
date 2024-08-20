@@ -67,6 +67,6 @@ export class NotecardComponent implements OnInit {
   ngOnInit(): void {}
 
   handleDelete() {
-    // this.sendDataToParent.emit("data from child deleted");
+    
   }
 }

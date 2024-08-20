@@ -12,4 +12,11 @@ export class NotesService {
       `/notes/${endpoint}?access_token=${this.access_token}`
     );
   }
+
+  addNotesApiCall(url:any, data: any) {
+    return this.httpService.postAPIcall(
+      `${url}?access_token=${this.access_token}`,
+      data
+    );
+  }
 }
