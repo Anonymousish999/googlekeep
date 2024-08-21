@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpService } from '../services/http-service/http.service';
 import { NotesService } from '../services/notes-service/notes.service';
+import { DataService } from '../services/data/data.service';
 
 @Component({
   selector: 'app-notes-container',
@@ -10,7 +11,9 @@ import { NotesService } from '../services/notes-service/notes.service';
 export class NotesContainerComponent implements OnInit {
   notesList: any = [];
 
-  constructor(private notesService: NotesService) {}
+  @Input() searchText: string = '';
+
+  constructor(private notesService: NotesService, private dataService : DataService) {}
 
   ngOnInit(): void {
     this.notesService.getAllNotesApiCall("getNotesList").subscribe({
@@ -19,6 +22,10 @@ export class NotesContainerComponent implements OnInit {
         console.log('result is: ', this.notesList);
       },
       error: (e) => {},
+    });
+
+    this.dataService.currentData.subscribe((data) => {
+      this.searchText = data;
     });
   }
 }
