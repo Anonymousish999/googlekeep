@@ -79,16 +79,6 @@ export class HeaderComponent implements OnInit {
   onSearch() {
     console.log(this.searchText);
 
-  //   this.notesService.getAllNotesApiCall('getNotesList').subscribe({
-  //     next: (response:any) => {
-  //       this.itemList = response;
-
-  //     },
-  //     error: (error:Error) => {
-  //       console.log('error', error);
-  //     }
-  //   })
-
       this.dataService.updateData(this.searchText);
 
   }
