@@ -97,11 +97,13 @@ export class NotecardComponent implements OnInit {
     this.notesService.noteIconsApiCall(payloadData, endpoint).subscribe({
       next: (res) => {
         this.updateList.emit({ action: action, data: this.noteDetails });
+        window.location.reload();
         console.log('response is: ', res);
       },
       error: (err) => {
         console.log('error is: ', err);
       },
     });
+    
   }
 }
