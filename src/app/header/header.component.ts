@@ -89,4 +89,8 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  logOut() {
+    localStorage.removeItem('access_token');
+    window.location.href = ' ';
+  }
 }
