@@ -3,7 +3,7 @@
 
     </app-addnote>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; align-items: center;">
-        <div *ngFor="let notesData of notesList">
+        <div *ngFor="let notesData of notesList | search : searchText">
             <app-notecard [noteDetails]="notesData"></app-notecard>
         </div>
     </div>
